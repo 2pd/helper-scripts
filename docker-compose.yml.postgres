@@ -18,7 +18,5 @@ services:
       - GUNICORN_THREADS=1
       - PGADMIN_DEFAULT_EMAIL=liang.shi@protonmail.com
       - PGADMIN_DEFAULT_PASSWORD=test
-    depends_on:
-      - postgres
 volumes:
   postgres:
