@@ -2,8 +2,8 @@ version: "3.7"
 services:
   postgres:
     image: postgres:9.6.6
-    ports:
-      - "5432:5432"
+    # ports:
+     #  - "5432:5432"
     volumes:
       - 'postgres:/var/lib/postgresql/data'
     environment:
@@ -18,5 +18,7 @@ services:
       - GUNICORN_THREADS=1
       - PGADMIN_DEFAULT_EMAIL=liang.shi@protonmail.com
       - PGADMIN_DEFAULT_PASSWORD=test
+    depends_on:
+      - postgres
 volumes:
   postgres:
