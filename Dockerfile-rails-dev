@@ -1,0 +1,18 @@
+FROM ruby:2.6.3
+
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs ghostscript
+
+RUN mkdir -p /app
+RUN mkdir -p /usr/local/nvm
+WORKDIR /app
+
+RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
+RUN apt-get install -y nodejs
+
+RUN node -v
+RUN npm -v
+
+RUN gem install bundler
+RUN gem install rails -v 6.0.0
+
+CMD "/bin/bash"
