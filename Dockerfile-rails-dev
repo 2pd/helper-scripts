@@ -15,4 +15,6 @@ RUN npm -v
 RUN gem install bundler
 RUN gem install rails -v 6.0.0
 
+EXPOSE 3000
+
 CMD "/bin/bash"
